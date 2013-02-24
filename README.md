@@ -9,6 +9,11 @@ sqlite3 db/tues.db < db/dump.sql
 
 Run rspec
 rspec spec/<file>
+rspec spec/*
 
 Run features
 cucumber features
+
+
+Run TuEs
+ruby lib/TuEs.rb <list, add> <todo>
