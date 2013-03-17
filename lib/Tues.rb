@@ -22,6 +22,10 @@ class Tues
     return "Usage <add, list, remove> <string #tag1 #tag2>"
   end
 
+  def getTag(name)
+    Tag.find_or_create_by_name(name)
+  end
+
   def add(text, hashes)
     puts "add new todo: \""  + text + "\"" 
     todo = Todo.new
@@ -29,8 +33,7 @@ class Tues
 
     if !hashes.empty? then
       hashes.each do |hash|
-        tag = Tag.new
-        tag.name = hash
+        tag = getTag(hash)
         todo.tags << tag
       end
     end
